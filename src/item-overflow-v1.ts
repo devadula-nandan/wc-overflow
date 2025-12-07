@@ -39,7 +39,6 @@ export class OverflowWc extends LitElement {
       align-items: center;
       white-space: nowrap;
       text-align: left;
-      margin: 0.125rem;
     }
     span {
       display: inline-block;
