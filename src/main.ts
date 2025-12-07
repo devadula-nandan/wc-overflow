@@ -238,7 +238,7 @@ function overflowRenderer(hiddenItems: any[]) {
 }
 
 // Wait for full load so external Carbon web-component modules are registered
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
   const components = document.querySelectorAll("overflow-wc");
   const itemCountInput = document.querySelector("cds-number-input") as any;
   const popovers = document.querySelectorAll("cds-popover");
@@ -432,5 +432,7 @@ window.addEventListener("load", () => {
   );
 
   initVals();
-  updateItems(); // initial
+  requestAnimationFrame(() => {
+    updateItems();
+  });
 });

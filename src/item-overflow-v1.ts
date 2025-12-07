@@ -75,11 +75,12 @@ export class OverflowWc extends LitElement {
     }
   }
 
-  updated(changedProperties: Map<string, any>) {
+  async updated(changedProperties: Map<string, any>) {
     if (changedProperties.has("items")) {
       this.measured = false;
       this.itemRefs = [];
-      this.updateComplete.then(() => this.measureAllItems());
+      await this.updateComplete;
+      this.measureAllItems();
     }
   }
 
