@@ -107,17 +107,14 @@
         resize: horizontal;
         padding: 1rem;
         border: dashed 1px var(--cds-border-strong);
-        outline: dashed 1px var(--cds-border-strong);
+        /* outline: dashed 1px var(--cds-border-strong); */
         outline-offset: -17px;
         overflow: hidden;
         max-inline-size: calc(100% - 34px);
         min-inline-size: 120px;
-      }
+        box-shadow: inset 0 0 0 1rem var(--cds-layer-01);
 
-      .component-container {
-        margin: 0.125rem;
       }
-
       .control-panel {
         padding: 1rem;
         min-height: calc(100vh - 2rem);
@@ -172,7 +169,7 @@
         <div class="resize">
           <script>
             for (let i = 0; i < 1; i++) {
-              document.write(`<div class="component-container"><overflow-wc /></div>`);
+              document.write(`<div><overflow-wc /></div>`);
             }
           </script>
         </div>
