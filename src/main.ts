@@ -28,6 +28,7 @@ const WORDS = [
 ];
 
 function createItems(count: number) {
+  const items = new Array(count);
   const wordsLen = WORDS.length;
   const typesLen = TAG_TYPES.length;
 
@@ -35,17 +36,19 @@ function createItems(count: number) {
     alert(`Clicked item-${id} ${word}`);
   };
 
-  return Array.from({ length: count }, (_, i) => {
+  for (let i = 0; i < count; i++) {
     const index = i + 1;
     const word = WORDS[i % wordsLen];
 
-    return {
+    items[i] = {
       id: `item-${index}`,
       label: word,
       type: TAG_TYPES[i % typesLen],
       onClick: () => handleClick(index, word),
     };
-  });
+  }
+
+  return items;
 }
 
 type ItemVariant = "tag" | "dismissable-tag" | "button" | "icon-button";
