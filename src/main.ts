@@ -242,6 +242,7 @@ function overflowRenderer(hiddenItems: any[]) {
         </svg>
         <span slot="tooltip-content"> Options </span>
         <cds-overflow-menu-body flipped>
+          <!-- rendering too many menu items could impact performance -->
           ${hiddenItems.map(
             (item) => html` <cds-overflow-menu-item
               @click=${() => item.onClick?.(item)}
