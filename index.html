@@ -86,6 +86,13 @@
     ></script>
  <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/version/v2.43.0/modal.min.js"></script>
 
+    <script>
+      // Prevent double-click zoom on mobile devices
+      document.ondblclick = function (e) {
+        e.preventDefault();
+      };
+    </script>
+
     <style>
       body {
         background-color: var(--cds-background);
